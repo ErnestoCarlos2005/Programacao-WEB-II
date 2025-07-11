@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="estilo.css"> 
+</head>
+<body>
+    <style>
+    body {
+        background-color: #ffbd5b;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    .header {
+        font-size: 24px;
+        color: #002147;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #002147;
+        text-align: center;
+    }
+
+    form {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    form label {
+        font-weight: bold;
+        color: #002147;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    form input[type="checkbox"] {
+        margin-right: 8px;
+    }
+
+    .permissoes {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    .botao-salvar {
+        padding: 12px 20px;
+        background-color: #002147;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: fit-content;
+        justify-self: end;
+    }
+
+    .botao-salvar:hover {
+        background-color: #004080;
+    }
+</style>
+
+   <h2>Editar Usuário</h2>
+<form action="processar_edicao_usuario.php" method="POST">
+    <input type="hidden" name="usuario_id" value="<!-- Preencha com o ID -->">
+
+    <label>Endereço:</label>
+    <input type="text" name="endereco" required><br>
+
+    <label>Cargo:</label>
+    <input type="text" name="cargo" required><br>
+
+    <label>Função:</label>
+    <input type="text" name="funcao" required><br>
+
+    <label>Login:</label>
+    <input type="text" name="login" required><br>
+
+    <label>Senha (deixe em branco se não for mudar):</label>
+    <input type="password" name="senha"><br>
+
+    <label>Status:</label>
+    <select name="ativo">
+        <option value="1">Ativo</option>
+        <option value="0">Inativo</option>
+    </select><br>
+
+    <button type="submit">Salvar</button>
+</form>
+ 
+</body>
+</html>
